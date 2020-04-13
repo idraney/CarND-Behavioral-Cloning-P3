@@ -29,6 +29,8 @@ def main():
     #two methods of naming output video to handle varying environemnts
     video_file_1 = args.image_folder + '.mp4'
     video_file_2 = args.image_folder + 'output_video.mp4'
+    # video_file_1 = args.image_folder + '.avi'
+    # video_file_2 = args.image_folder + 'output_video.avi'
 
     print("Creating video {}, FPS={}".format(args.image_folder, args.fps))
     clip = ImageSequenceClip(image_list, fps=args.fps)
