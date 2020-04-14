@@ -156,3 +156,8 @@ The image training data set was used to train the model (80% of the total image 
 
 ![alt text][image8]
 
+
+
+### Results of Training the Model
+
+Recorded video of the car driving autonomously on track one can be seen in the file [video.mp4](./video.mp4).
