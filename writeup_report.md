@@ -2,7 +2,7 @@
 
 ---
 
-**Behavioral Cloning Project Writep**
+**Behavioral Cloning Project Writeup**
 
 The goals of this Behavioral Cloning project are the following:
 * Use the simulator to collect data of good driving behavior
@@ -55,7 +55,7 @@ Using the Udacity provided simulator and my **drive.py** file, the car can be dr
 python drive.py model.h5
 ```
 
-Note that the simulator must be running in autonomous mode while the above command is exectuted.
+Note that the simulator must be running in autonomous mode while the above command is executed.
 
 #### 3. Code is usable and readable
 
@@ -105,7 +105,7 @@ As previously mentioned, several laps of driving were recorded on both tracks of
 
 The strategy for creating the model architecture was to follow the lessons learned in the Behavioral Cloning section of the Udacity Self-Driving Car Engineer Nanodegree program.
 
-The first step was to use a convolutional neural network model similar to the one implemented in NVIDIA's [End to End Learning for Self-Driving Cars](http://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf).  Being that this model proved to be effective for one of the leaders in deep learning and self-driving car technologies, it would be, at the very least, a good place to start.  The convolutional layers of the final model nearly matched that of NVIDIA's model.  However, the referenced paper by NVIDIA makes no mention of Rctified Linear Units (ReLU) in their convolutional layers.
+The first step was to use a convolutional neural network model similar to the one implemented in NVIDIA's [End to End Learning for Self-Driving Cars](http://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf).  Being that this model proved to be effective for one of the leaders in deep learning and self-driving car technologies, it would be, at the very least, a good place to start.  The convolutional layers of the final model nearly matched that of NVIDIA's model.  However, the referenced paper by NVIDIA makes no mention of Rectified Linear Units (ReLU) in their convolutional layers.
 
 In order to test the model, image and steering angle data was split into a training set (80%) and validation set (20%).  The initial model tested had a low mean squared error on the training set relative to a much higher mean squared error on the validation set.  As learned in the Behavioral Cloning section of the Udacity Self-Driving Car Engineer Nanodegree program, this implied that the model was overfitting. 
 
@@ -127,7 +127,7 @@ To capture good driving behavior, I first recorded three laps on track one by dr
 
 ![alt text][image2]
 
-Over one lap of recovery driving was recorded in an effort to make the car learn how to adhere to the center of the track, and correct if it was to find itself at the track's edge.  To do so, the car would be driven to the edge of the track, and recording would be turned on prior to driving the car to the center of the track.  Recording would be turned off once the car reached the center of the track.  This process was repeated throughout the track, recovering from both right and left edges of the track.  An example of recovery driving is displayed in the five images below.
+Over one lap of recovery driving was recorded in an effort to make the car learn how to adhere to the center of the track, and correct if it was to find itself at the track's edge.  To do so, the car would be driven to the edge of the track, and recording would be activated prior to driving the car to the center of the track.  Recording would then be deactivated once the car reached the center of the track.  This process was repeated throughout the track, recovering from both right and left edges of the track.  An example of recovery driving is displayed in the five images below.
 
 ![alt text][image3_1]
 ![alt text][image3_2]
@@ -143,7 +143,7 @@ Two additional laps of slow driving on track one were recorded to augment the da
 
 ![alt text][image5]
 
-In **clone.py**, each processed driving image was additionally flipped horizontally to further augment the data set.  Hence, the data set size was doubled.  A factor of negative one was also applied to the steering angles corresponding to the flipped images so that the model would train to drive in the correct direction.  Below is an image recorded from driving the car in the simulator, followed by an image of its horizontally flipped counterpart.
+In **model.py**, each processed driving image was additionally flipped horizontally to further augment the data set.  Hence, the data set size was doubled.  A factor of negative one was also applied to the steering angles corresponding to the flipped images so that the model would train to drive in the correct direction.  Below is an image recorded from driving the car in the simulator, followed by an image of its horizontally flipped counterpart.
 
 ![alt text][image6]
 ![alt text][image7]
